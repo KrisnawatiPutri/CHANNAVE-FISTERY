@@ -1,0 +1,14 @@
+LAPORAN VALIDASI STATIS · CHANNAVE FISHERY
+=======================================
+Basis: paket MinaBooks_NiceGUI_PythonOnly_Source.zip dari percakapan sebelumnya.
+File Python yang berhasil diparse: 32
+Rute NiceGUI asli: 26; rute baru: 26 (identik: True)
+Backend akuntansi identik byte-per-byte: YA
+Model, Form, FIFO, Jurnal & Excel: tidak disentuh.
+Berkas .html/.css/.js buatan sendiri: 0
+Nama seed database baru diganti, data lama tidak disentuh.
+
+Pengujian runtime Django/NiceGUI: BELUM DILAKUKAN (dependensi tidak tersedia di lingkungan ini).
+Wajib tes login, transaksi, jurnal, FIFO, export Excel, dan browser Android WebView sebelum produksi.
+
+MASALAH: tidak ditemukan pada pemeriksaan statis

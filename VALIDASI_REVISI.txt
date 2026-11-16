@@ -1,0 +1,31 @@
+CHANNAVE FISHERY | MODERN UI + EXCEL ANTARSHEET
+
+Pemeriksaan yang BERHASIL dalam lingkungan pembuatan:
+- 34 file .py: AST/sintaks kompatibel Python 3.11; kompilasi berhasil.
+- 26 rute halaman NiceGUI tetap terdaftar.
+- UI buatan sendiri: tidak ada file .html, .css, atau .js.
+- Lima pengujian statis jalur NiceGUI async/Django ORM lulus.
+- Berkas inti accounting/models.py, forms.py, services.py, nicegui_app/db.py
+  tidak dimodifikasi dari ZIP Fix Error 500 sebelumnya.
+- Generator ekspor dijalankan memakai model tiruan: 14 sheet, rumus FIFO,
+  jurnal, neraca lajur, laba rugi, neraca, dan RINGKASAN tersedia.
+- Uji ulang formula pada workbook contoh setelah harga lot pembelian diubah:
+  harga/unit 22.000 menjadi 25.000; biaya 2.220.000 -> 2.250.000;
+  laba 1.080.000 -> 1.050.000; nilai stok akhir 440.000 -> 500.000;
+  total aset 23.080.000 -> 23.050.000; selisih neraca tetap 0.
+- Pemindai kesalahan formula untuk workbook demo tidak menemukan #REF!,
+  #DIV/0!, #VALUE!, #NAME?, atau #N/A.
+
+Yang BELUM diuji pada server aktif:
+- Django + NiceGUI melalui browser, karena paket belum tersedia untuk instalasi
+  pada lingkungan pengujian ini.
+- Transaksi multiuser end-to-end, unduhan browser mobile/APK, dan beban server.
+
+JALANKAN DI KOMPUTER PENGGUNA:
+  python -m pip install -r requirements_nicegui.txt
+  python manage.py makemigrations accounting
+  python manage.py migrate
+  python manage.py test tests_migrasi -v 2
+  python -m nicegui_app.main
+
+Gunakan backup database; file Excel tidak menyinkronkan edit kembali ke DB.
